@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandit Mukesh Chhangani - Astrology & Palm Reading</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            background: url('https://source.unsplash.com/1600x900/?nebula,galaxy,stars') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 64, 107, 0.871);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+        nav a {
+            color: gold;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: orange;
+        }
+
+        /* Header */
+        header {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 50px 30px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            font-size: 1.8em;
+            border-bottom: 2px solid gold;
+        }
+        .guru-img {
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+            margin: 10px auto;
+            display: block;
+        }
+
+        /* Sections */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        /* Button Styling */
+        button, .whatsapp-button {
+            background: gold;
+            color: black;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        button:hover, .whatsapp-button:hover {
+            background: orange;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid gold;
+        }
+
+        /* Responsive Design Fixes */
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 15px;
+                font-size: 1.4em;
+            }
+            .guru-img {
+                width: 150px;
+            }
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+
+        /* Floating Symbols */
+        .floating-symbol {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0.7;
+            animation: floatUp 5s infinite linear;
+            color: gold;
+        }
+
+        @keyframes floatUp {
+            from { transform: translateY(100vh); opacity: 0.5; }
+            to { transform: translateY(-10vh); opacity: 1; }
+        
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <header>
+        <img src="guru.png" alt="Guru Image" class="guru-img" align="right">
+        <div class="header-content">
+           <h5>Meet our expert : </h5> <h2>Dvija. Mukesh Chhangani</h2>
+            <br>
+         <br>
+        </div>
+    </header>
+
+    <div class="container" id="about">
+        <h2>✨ Discover Your Path with Ancient Wisdom ✨</h2>
+        <p>With a deep understanding of astrology, palm reading, and sacred rituals, Pandit Mukesh Chhangani has guided countless individuals towards clarity, success, and spiritual balance.</p>
+        <button onclick="showContact()">🔯 Schedule a Consultation 🔯</button>
+    </div>
+
+    <div class="container" id="services">
+        <h2>🌟 Our Offerings 🌟</h2>
+        <ul>
+            <li>🔮 Detailed Horoscope Analysis</li>
+            <li>🖐️ Palmistry & Future Insights</li>
+            <li>💍 Kundali Matching for Marriage</li>
+            <li>📿 Graha Dosh & Shanti Pujas</li>
+            <li>🏠 Vastu Consultation for Homes & Offices</li>
+            <li>🧘‍♂️ Spiritual Healing & Energy Cleansing</li>
+        </ul>
+    </div>
+    <br> <a href="mainpage1.html" style="color: rgb(0, 0, 0)" align="center"> <h3>CLick to go back to Main page </h3></a>
+
+    <footer>
+        <p>&copy; 2025 Pandit Mukesh Chhangani | All Rights Reserved</p>
+        <div id="contact" class="hidden">
+            <p>📞 Call: 
+            <p>📧 Email: <strong>radhikachhangani.s13.3251@gmail.com</strong></p>
+            <a href="https://wa.me/919876543210" class="whatsapp-button" target="_blank">Chat on WhatsApp</a>
+        </div>
+    </footer>
+
+    <script>
+        function showContact() {
+            document.getElementById("contact").classList.toggle("hidden");
+        }
+
+        function createFloatingSymbols() {
+            const symbols = ['☀️', '🌙', '🔯', '🪐', '✨', '🔮', '🌟', '📿'];
+            const container = document.createElement('div');
+            document.body.appendChild(container);
+
+            for (let i = 0; i < 20; i++) {
+                let symbol = document.createElement('div');
+                symbol.classList.add('floating-symbol');
+                symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                symbol.style.left = Math.random() * 100 + 'vw';
+                symbol.style.animationDuration = (Math.random() * 8 + 5) + 's';
+                symbol.style.fontSize = (Math.random() * 15 + 20) + 'px';
+                symbol.style.top = Math.random() * 80 + 'vh';
+                container.appendChild(symbol);
+            }
+        }
+        createFloatingSymbols();
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedic Astrology - Kundali & Horoscope</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Hind', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('front1.png') no-repeat center center fixed;
+            background-size: cover; /* Ensures the image covers the whole screen */
+            color: rgb(70, 69, 69);
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Dark overlay for readability */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+            z-index: -1;
+        }
+
+        header {
+            height: 20%;
+            padding: 2rem;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease-in-out;
+        }
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
+        }
+        header p {
+            font-size: 1.0rem;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .navbar a {
+            
+            background: #ff3e5b;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .navbar a:hover {
+            background: #ffffff;
+            color: #ff5222;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: match-parent;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        h2, h3 {
+            color: #B34700;
+        }
+        .contact {
+            padding: 25px;
+            background: #fa6e6e;
+            color: rgb(5, 5, 5);
+            font-size: 1.2rem;
+            border-radius: 10px;
+        }
+        .footer {
+            background: #b5b5b5;
+            padding: 20px;
+            color: rgb(22, 22, 22);
+            font-size: 1.1rem;
+        }
+        @media (max-width: 768px) {
+            header {
+                height: 15%;
+                length: 20%;
+            }
+            header h1 {
+                font-size: 2.0rem;
+            }
+            .navbar {
+                height: 30%;
+                flex-direction: column;
+            }
+            .navbar a{
+                size: 25%;
+            }
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🕉 Vedic Astrology - by Astrogyaani 🕉</h1>
+        <p>Discover the secrets of your stars with personalized Kundali, horoscope insights, and in-depth Vedic astrology guidance.</p>
+        <div class="navbar">
+            <a href="yearly1.html">Yearly Horoscope</a>
+            <a href="rashi1.html"> Check your Rashi</a>
+            <a href="#matching">about Kundali Matching</a>
+            <a href="#about">About astrology Insights</a>
+            <a href="guru.html">Contact</a>
+        </div>
+    </header>
+    <section class="container" id="horoscope">
+        <h2>🔮 Daily Horoscope</h2>
+        <p>Get precise astrological predictions for your career, love, health, and finances based on your zodiac sign. 
+        Your horoscope reveals the cosmic energies influencing your life today.</p>
+        <ul>
+            <li><b>Career & Finance:</b> Know the planetary impact on job opportunities, promotions, and financial stability.</li>
+            <li><b>Love & Relationships:</b> Understand compatibility, relationship hurdles, and emotional growth.</li>
+            <li><b>Health & Well-being:</b> Find out about stress levels, energy, and health concerns for the day.</li>
+        </ul>
+    </section>
+    <section class="container" id="kundali">
+        <h2>📜 Personal Kundali</h2>
+        <p>Your birth chart (Janam Kundali) is the celestial blueprint of your life. It provides insights into your strengths, challenges, and life path.</p>
+        <h3>Key Components:</h3>
+        <ul>
+            <li><b>Planetary Positions:</b> How planets shape your personality, career, and love life.</li>
+            <li><b>Houses & Bhavas:</b> Each house governs aspects like wealth, education, marriage, and health.</li>
+            <li><b>Doshas & Remedies:</b> Solutions for planetary imbalances affecting your destiny.</li>
+        </ul>
+    </section>
+    <section class="container" id="matching">
+        <h2>💗 Kundali Matching</h2>
+        <p>Marriage compatibility is determined through Ashta-Koota matching, analyzing 36 Gunas to ensure a harmonious union.</p>
+        <h3>Important Factors:</h3>
+        <ul>
+            <li><b>Guna Milan:</b> Compatibility score based on mental, physical, and spiritual aspects.</li>
+            <li><b>Mangal Dosha:</b> Identifying planetary obstacles affecting marriage and their remedies.</li>
+            <li><b>Planetary Influence:</b> Role of Jupiter, Venus, and Rahu-Ketu in married life.</li>
+        </ul>
+    </section>
+    <section class="container" id="about">
+        <h2>🌌 About Vedic Astrology</h2>
+        <p>Vedic Astrology (Jyotish Shastra) is an ancient science that guides life’s journey through the study of celestial movements.</p>
+        <h3>Key Elements:</h3>
+        <ul>
+            <li><b>12 Zodiac Signs (Rashi):</b> Influence personality and destiny.</li>
+            <li><b>9 Planets (Navagraha):</b> Determine major life events.</li>
+            <li><b>27 Nakshatras:</b> Cosmic energies shaping emotions and karma.</li>
+            <li><b>Doshas & Remedies:</b> Vedic solutions for balancing planetary effects.</li>
+        </ul>
+    </section>
+    <section class="contact" id="contact">
+        <h2>📩 Contact The Webdev</h2>
+        <p>Email: <a href="mailto:radhika.chhangani.s13.3251@gmail.com" style="color: rgb(255, 5, 5);">radhika.chhangani.s13.3251@gmail.com</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/_radhikachhangani_" target="_blank" style="color: rgb(253, 25, 25);">@_radhikachhangani_</a></p>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2025 Vedic Astrology. All rights reserved by Radhika.</p>
+    </footer>
+</body>
+</html>

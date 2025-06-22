@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindu Astrology - Find Your Rashi</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+        
+        /* ✅ Background Image Fix */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('front2.png') no-repeat center center/cover;
+            color: #4B2C20;
+            margin: 50;
+            padding: 50;
+            text-align: center;
+        }
+
+        header {
+            background: rgba(255, 189, 90, 0.9);
+            padding: 40px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(25px);
+            border-radius: 50px;
+            margin: 50px auto;
+            width: 70%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-family: 'Great Vibes', cursive;
+            color: #f84002;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 245, 230, 0.85);
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 245, 230, 0.8);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        button {
+            background: #ffd51c;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #A77D4D;
+            transform: scale(1.05);
+        }
+
+        input {
+            padding: 12px;
+            font-size: 1.2rem;
+            border-radius: 6px;
+            border: 2px solid #C19A6B;
+            text-align: center;
+            background: white;
+            color: #4B2C20;
+            width: 200px;
+        }
+
+        #zodiac-result {
+            margin-top: 20px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #A77D4D;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🔮 Hindu Astrology 🔮</h1>
+        <p>Discover your Rashi and unlock the cosmic secrets ✨</p>
+    </header>
+    <main>
+        <section class="section">
+            <h2>What is Hindu Astrology?</h2>
+            <p>Hindu astrology, also known as <strong>Vedic Astrology</strong> or <strong>Jyotish Shastra</strong>, is an ancient science that interprets the influence of celestial bodies on human life.</p>
+        </section>
+        <section class="section">
+            <h2>Find Your Rashi</h2>
+            <label for="nameLetter">Enter the first letter of your name:</label>
+            <input type="text" id="nameLetter" maxlength="1" style="text-transform: uppercase;">
+            <button onclick="getRashi()">Discover Your Rashi</button>
+            <p id="zodiac-result"></p>
+            <br> <a href="mainpage1.html"> CLick to go back to Main page </a>
+        </section>
+    </main>
+    <script>
+        function getRashi() {
+            let letter = document.getElementById('nameLetter').value.toUpperCase();
+            
+            const rashiMapping = {
+                "A": "Mesha (Aries) ♈", "L": "Mesha (Aries) ♈", "E": "Vrishabha (Taurus) ♉", "O": "Vrishabha (Taurus) ♉", "V": "Mithuna (Gemini) ♊", "K": "Mithuna (Gemini) ♊", 
+                "C": "Karka (Cancer) ♋", "H": "Karka (Cancer) ♋", "M": "Simha (Leo) ♌", "T": "Simha (Leo) ♌", "P": "Kanya (Virgo) ♍", "N": "Kanya (Virgo) ♍", 
+                "R": "Tula (Libra) ♎", "S": "Tula (Libra) ♎", "D": "Vrishchika (Scorpio) ♏", "J": "Vrishchika (Scorpio) ♏", "Y": "Dhanu (Sagittarius) ♐", "B": "Dhanu (Sagittarius) ♐", 
+                "G": "Makara (Capricorn) ♑", "Sh": "Makara (Capricorn) ♑", "Z": "Kumbha (Aquarius) ♒", "Kh": "Kumbha (Aquarius) ♒", "Th": "Meena (Pisces) ♓", "Ch": "Meena (Pisces) ♓"
+            };
+            
+            let rashi = rashiMapping[letter] || "Invalid input. Please enter a valid letter.";
+            document.getElementById('zodiac-result').innerText = "Your Rashi: " + rashi;
+        }
+    </script>
+</body>
+</html>

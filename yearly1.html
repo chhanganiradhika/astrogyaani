@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rashi Horoscope 2025</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Mukta:wght@400;600&family=Poppins:wght@300;500&display=swap');
+        
+        /* Professional Celestial Background */
+        body {
+            font-family: 'Mukta', sans-serif;
+            margin: 30px;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png'), radial-gradient(circle, #1a1a2e, #0f3460);
+            color: #FFD700;
+            text-align: center;
+        }
+        .container {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .header {
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: 'Cinzel', serif;
+            color: #FFD700;
+            text-shadow: 2px 2px 15px rgba(255, 215, 0, 0.8);
+        }
+
+        h1 {
+            font-size: 60px;
+            margin-top: 40px;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(3, 255, 238, 0.8);
+        }
+
+        /* Scrollable Rashi List */
+       /* Scrollable Rashi List */
+#rashi-list {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap;
+    padding: 20px; /* Reduced padding */
+    gap: 30px;
+    justify-content: flex-start; /* Aligns buttons properly */
+    flex-wrap: nowrap;
+    scrollbar-width: none; /* Shows scrollbar for better navigation */
+}
+
+/* Ensure buttons do not get cut off */
+#rashi-list button {
+    flex-shrink: 0; /* Prevents buttons from shrinking */
+}
+        /* Stylish Buttons */
+        #rashi-list button {
+            font-size: 20px;
+            font-weight: 600;
+            padding: 15px 25px;
+            cursor: pointer;
+            border-radius: 20px;
+            background: linear-gradient(to bottom, #ffcc00, #ff9900);
+            color: black;
+            border: none;
+            box-shadow: 0 4px 10px rgba(251, 255, 0, 0.856);
+            min-width: 140px;
+            min-height: 90px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #rashi-list button:hover {
+            background: linear-gradient(to bottom, #ff9900, #ff6600);
+            box-shadow: 10 9px 15px rgba(235, 247, 5, 0.96);
+            transform: translateY(-3px);
+        }
+    
+        /* Modern Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: #1e1e3f;
+            margin: 10% auto;
+            padding: 25px;
+            border-radius: 15px;
+            width: 50%;
+            color: white;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .modal-content h1 {
+            font-size: 28px;
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+        }
+
+        .section {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 0;
+        }
+
+        /* Close Button */
+        .close {
+            color: #ff4444;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .close:hover {
+            color: #ff7777;
+            transform: scale(1.2);
+        }
+        @media (max-width: 768px) {
+            .header {
+                font-size: 2rem;
+                margin-top: 10px;
+            }
+            h1 {
+                font-size: 36px;
+                margin-top: 10px;
+            }
+            #rashi-list {
+                gap: 10px;
+                padding: 10px;
+            }
+            #rashi-list button {
+                font-size: 16px;
+                min-width: 100px;
+                min-height: 70px;
+            }
+    </style>
+</head>
+<body>
+<br>
+    <h1>✨ Yearly Horoscope 2025 ✨</h1>
+    <br><br>
+    <p><h2>Select your Rashi to explore your future predictions.</h2></p>
+    <p><h3>Please scroll to find your rashi</h3></p>
+    <!-- Scrollable List of Rashis -->
+   <!-- Scrollable List with Navigation -->
+<div class="rashi-container">
+    <button class="scroll-btn left" onclick="scrollRashiList(-200)">&#10094;</button>
+    <div id="rashi-list">
+        <button onclick="openModal('mesha')">मेष (Mesha)</button>
+        <button onclick="openModal('vrishabha')">वृषभ (Vrishabha)</button>
+        <button onclick="openModal('mithuna')">मिथुन (Mithuna)</button>
+        <button onclick="openModal('karka')">कर्क (Karka)</button>
+        <button onclick="openModal('simha')">सिंह (Simha)</button>
+        <button onclick="openModal('kanya')">कन्या (Kanya)</button>
+        <button onclick="openModal('tula')">तुला (Tula)</button>
+        <button onclick="openModal('vrischika')">वृश्चिक (Vrischika)</button>
+        <button onclick="openModal('dhanu')">धनु (Dhanu)</button>
+        <button onclick="openModal('makar')">मकर (Makar)</button>
+        <button onclick="openModal('kumbha')">कुंभ (Kumbha)</button>
+        <button onclick="openModal('meena')">मीन (Meena)</button>
+    </div>
+    <button class="scroll-btn right" onclick="scrollRashiList(200)">&#10095;</button>
+</div>
+<br> <a href="mainpage1.html" style="color: white"> <h3>CLick to go back to Main page </h3></a>
+
+<!-- JavaScript for Scrolling -->
+<script>
+    function scrollRashiList(distance) {
+        document.getElementById("rashi-list").scrollBy({ left: distance, behavior: 'smooth' });
+    }
+</script>
+
+<!-- CSS for Styling -->
+<style>
+    /* Container for Scrollable List */
+    .rashi-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        max-width: 100%;
+    }
+
+    /* Scrollable Rashi List */
+    #rashi-list {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 20px;
+        gap: 20px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scroll-behavior: smooth;
+        max-width: 80%;
+    }
+
+    #rashi-list::-webkit-scrollbar {
+        display: none; /* Hides scrollbar */
+    }
+
+    /* Navigation Buttons */
+    .scroll-btn {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #FFD700;
+        border: none;
+        font-size: 24px;
+        padding: 10px 15px;
+        cursor: pointer;
+        position: absolute;
+        z-index: 2;
+        transition: 0.3s;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .scroll-btn.left {
+        left: 5px;
+    }
+
+    .scroll-btn.right {
+        right: 5px;
+    }
+
+    .scroll-btn:hover {
+        background-color: rgba(255, 215, 0, 0.7);
+        color: black;
+    }
+
+    /* Ensuring buttons don't shrink */
+    #rashi-list button {
+        min-width: 140px;
+        flex-shrink: 0;
+    }
+</style>
+
+    <!-- Modals for All 12 Rashis -->
+    <div id="modals-container">
+    </div>
+
+    <!-- JavaScript to Handle Modals -->
+    <script>
+        const rashis = {
+            "mesha": { letters: "Ch, La, Ee, Na, Me", wealth: "Strong financial growth", love: "Passionate and exciting", income: "Steady career advancements", health: "Energetic but avoid stress", element: "Fire" },
+            "vrishabha": { letters: "Ba, Be, Bo, Bu", wealth: "Stable and profitable", love: "Emotionally fulfilling", income: "Gradual financial rise", health: "Focus on well-being", element: "Earth" },
+            "mithuna": { letters: "Ka, Kha, Ga, Gi", wealth: "New investment opportunities", love: "Exciting and intellectual", income: "Sudden financial gains", health: "Avoid overthinking", element: "Air" },
+            "karka": { letters: "Hi, He, Ho, Da", wealth: "Steady income", love: "Deep emotional connections", income: "Slow but secure", health: "Manage emotions", element: "Water" },
+            "simha": { letters: "Ma, Me, Mu, Mo", wealth: "Luxury and success", love: "Passionate and strong", income: "Rise in finances", health: "Great vitality", element: "Fire" },
+            "kanya": { letters: "P, Th, Pe, Po", wealth: "Smart financial planning", love: "Balanced relationships", income: "Secure job stability", health: "Watch digestive health", element: "Earth" },
+            "tula": { letters: "Ra, Re, Ro, Ta", wealth: "Balanced financial year", love: "Romantic and strong", income: "Profitable career choices", health: "Maintain mental peace", element: "Air" },
+            "vrischika": { letters: "Na, Ni, Nu, Ne", wealth: "Strong financial shifts", love: "Intense and deep", income: "Unexpected monetary gains", health: "Mental peace is key", element: "Water" },
+            "dhanu": { letters: "Bh, Dha, Pha, Ye", wealth: "Expansion and prosperity", love: "Adventurous romance", income: "Strong financial opportunities", health: "Stay active and fit", element: "Fire" },
+            "makar": { letters: "Kh, Ja, Ji, Ju", wealth: "Slow but steady growth", love: "Stable relationships", income: "Good for investments", health: "Take care of bones", element: "Earth" },
+            "kumbha": { letters: "Ga, Sa, Sha, Sh", wealth: "Unique career opportunities", love: "Unconventional relationships", income: "Good for tech fields", health: "Maintain energy", element: "Air" },
+            "meena": { letters: "Di, Du, Th, Jh", wealth: "Sudden financial luck", love: "Emotional and deep", income: "Creativity leads to success", health: "Focus on relaxation", element: "Water" }
+        };
+
+        let container = document.getElementById("modals-container");
+
+        for (let key in rashis) {
+            let data = rashis[key];
+            container.innerHTML += `
+                <div class="modal" id="${key}">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('${key}')">&times;</span>
+                        <h1>${key.toUpperCase()} - Horoscope 2025</h1> <h2> see what 2025 has for you </h2><br>
+                        <div class="section"><strong>Lucky Letters:</strong> ${data.letters}</div>
+                        <div class="section"><strong>Wealth:</strong> ${data.wealth}</div>
+                        <div class="section"><strong>Love:</strong> ${data.love}</div>
+                        <div class="section"><strong>Income:</strong> ${data.income}</div>
+                        <div class="section"><strong>Health:</strong> ${data.health}</div>
+                        <div class="section"><strong>Element:</strong> ${data.element}</div>
+                    </div>
+                </div>`;
+        }
+
+        function openModal(id) { document.getElementById(id).style.display = "block"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+    </script>
+</body>
+</html>
